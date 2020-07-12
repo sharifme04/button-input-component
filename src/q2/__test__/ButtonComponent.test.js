@@ -3,12 +3,12 @@ import { shallow } from "enzyme";
 import ButtonComponent from "../ButtonComponent";
 
 describe("<InputComponent/>", () => {
-  test("return true", () => {
+  test("return component true", () => {
     const component = shallow(<ButtonComponent />);
     expect(component).toMatchSnapshot();
   });
 
-  test("does not break with an empty array", () => {
+  test("return button true", () => {
     const component = shallow(<ButtonComponent />);
     expect(component.find("button")).toHaveLength(1);
   });
