@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import ButtonComponent from "./q2/ButtonComponent";
+import InputComponent from "./q3/InputComponent";
+import "./App.css";
 
 function App() {
+  const [initialValue] = useState("");
+
+  const handleClick = () => {
+    alert("You have clicked the button");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <div className="row justify-content-center mt-4">
+        <InputComponent
+        initialValue={initialValue}
+        />
+      </div>
+      <div className="row justify-content-center">
+        <ButtonComponent
+          title={"Nurocat Button"}
+          onClick={handleClick}
+          isDanger={false}
+          isBlock={true}
+        />
+      </div>
     </div>
   );
 }
