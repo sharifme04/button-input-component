@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ButtonComponent = ({
   style = {},
@@ -6,7 +7,6 @@ const ButtonComponent = ({
   isDisabled = false,
   isDanger = false,
   isBlock = false,
-  children,
   onClick,
   ...props
 }) => {
@@ -14,7 +14,7 @@ const ButtonComponent = ({
     <button
       disabled={isDisabled}
       type="button"
-      className={`${!isDanger && !isDisabled  && "btn btn-primary"}
+      className={`${!isDanger && !isDisabled && "btn btn-primary"}
     ${isDisabled && "btn btn-light"}
     ${isDanger && "btn btn-danger"}
     ${isBlock ? "blockStyle" : "inlineStyle"}
@@ -24,6 +24,14 @@ const ButtonComponent = ({
       {title}
     </button>
   );
+};
+
+ButtonComponent.propTypes = {
+  title: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  isDanger: PropTypes.bool,
+  isBlock: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 export default ButtonComponent;

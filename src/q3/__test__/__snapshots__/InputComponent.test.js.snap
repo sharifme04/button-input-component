@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputComponent/> return true 1`] = `
+<div
+  className="col-4"
+>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control"
+      name="search"
+      onChange={[Function]}
+      placeholder="Please enter a text"
+      type="text"
+    />
+  </div>
+</div>
+`;
